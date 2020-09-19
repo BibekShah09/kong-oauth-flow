@@ -1,0 +1,15 @@
+{
+  "name": "kong-oauth-flow",
+  "version": "1.0.0",
+  "description": "Authentication Flow with Kong",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "kong",
+    "auth-flow"
+  ],
+  "author": "Bibek Shah",
+  "license": "ISC"
+}

@@ -1,0 +1,32 @@
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Yarn integrity file
+.yarn-integrity
+
+# IntelliJ IDE
+.idea
+
+# Build directory
+dist
+
+# Dotenv configuration
+.env
+
+#Docker configuration
+.env.docker
+
+# Visual Studio Code
+.vscode
+
+# Tests
+.nyc_output
+
+# Vim swp files
+*.swp
