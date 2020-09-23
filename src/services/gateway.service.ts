@@ -1,19 +1,18 @@
-import { GATEWAY as gatewayConfig } from '../config';
+import {GATEWAY as gatewayConfig} from '../config';
 import * as httpClient from '../../utils/httpClient';
-import { GatewayInterface, TokenInterface } from '../types/gateway.type';
+import {GatewayInterface, TokenInterface} from '../types/gateway.type';
 
 class GatewayService implements GatewayInterface {
-    /** public loadApplicationName(client_id: string) {
-    const url = `${gatewayConfig.GATEWAY_ADMIN}/oauth2/${client_id}`;
+    public loadApplicationName(client_id: string) {
+        const url = `${gatewayConfig.GATEWAY_ADMIN}/oauth2/${client_id}`;
 
-    return httpClient
-      .get(url, null)
-      .then(response => {
-        console.log(`the response from http client is`, response);
+        return httpClient
+            .get(url)
+            .then(response => {
 
-        return response.name;
-      });
-  }*/
+                return response;
+            });
+    }
 
     private authorize(
         clientID: string,
