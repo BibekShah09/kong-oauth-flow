@@ -4,12 +4,26 @@
   "description": "Authentication Flow with Kong",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "NODE_ENV=production ts-node --transpile-only index.ts"
   },
   "keywords": [
     "kong",
     "auth-flow"
   ],
-  "author": "Bibek Shah",
-  "license": "ISC"
+  "author": "Bibek Shah <bibekshah09@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.20.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  },
+  "devDependencies": {
+    "@types/node": "^14.0.23",
+    "dtslint": "^3.6.12",
+    "eslint": "^7.4.0",
+    "ts-node": "^8.10.2",
+    "typescript": "^3.9.7"
+  }
 }

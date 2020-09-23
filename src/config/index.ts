@@ -18,6 +18,9 @@ const GATEWAY = {
     SERVICE_HOST: 'mockbin.org',
 };
 
+const PORT = process.env.PORT;
+
 export {
-    GATEWAY
+    GATEWAY,
+    PORT
 };

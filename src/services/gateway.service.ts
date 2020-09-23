@@ -32,7 +32,7 @@ class GatewayService implements GatewayInterface {
             authenticated_userid: authenticatedUserID,
         };
 
-        return httpClient.post(url, body, null)
+        return httpClient.post(url, body)
             .then(response => {
                 return response.redirect_uri.split('code=')[1];
             })
@@ -52,7 +52,7 @@ class GatewayService implements GatewayInterface {
         };
 
         return httpClient
-            .post(url, data, null)
+            .post(url, data)
             .then(response => {
                 return response;
             });
@@ -69,7 +69,7 @@ class GatewayService implements GatewayInterface {
         };
 
         return httpClient
-            .post(url, data, null)
+            .post(url, data)
             .then(response => {
 
                 return response;
@@ -87,7 +87,10 @@ class GatewayService implements GatewayInterface {
                 })
                 .then(primaryToken => {
                     return this.getAuthorizationCode(primaryToken, client_id, client_secret);
-                });
+                })
+                .catch(err => {
+                    throw err;
+                })
         } catch (err) {
             throw err;
         }
@@ -102,7 +105,7 @@ class GatewayService implements GatewayInterface {
         const url = `${gatewayConfig.GATEWAY_ADMIN}/consumers`;
 
         return httpClient
-            .post(url, data, null)
+            .post(url, data)
             .then(consumer => {
                 return consumer;
             });
@@ -120,7 +123,7 @@ class GatewayService implements GatewayInterface {
         const url = `${gatewayConfig.GATEWAY_ADMIN}/consumers/${consumer_id}/oauth2`;
 
         return httpClient
-            .post(url, data, null)
+            .post(url, data)
             .then(consumerCredentials => {
 
                 return consumerCredentials;

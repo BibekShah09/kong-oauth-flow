@@ -3,17 +3,17 @@ import axios from 'axios';
 const https = require('https');
 
 const errorFormatter = (error) => {
+    console.log(`error is`, error);
+
     return error.message;
 };
 
-const get = async (url, token) =>
+const get = async (url) =>
     axios({
         url: url,
         method: 'GET',
         headers: {
             'Content-Type': 'application/json',
-            Authorization: `Bearer ${token}`,
-            Host: 'mockbin.org',
         },
         responseType: 'json',
         httpsAgent: new https.Agent({rejectUnauthorized: false}),
@@ -25,13 +25,11 @@ const get = async (url, token) =>
             throw errorFormatter(error)
         });
 
-const post = async (url, body, token) => axios
+const post = async (url, body) => axios
     .post(url, body, {
         headers: {
-            // Authorization: `Bearer ${token}`,
             Accept: 'application/json',
             'Content-Type': 'application/json',
-            // Host: 'mockbin.org',
             httpsAgent: new https.Agent({
                 rejectUnauthorized: false,
             }),
