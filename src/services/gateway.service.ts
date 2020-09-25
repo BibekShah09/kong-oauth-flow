@@ -46,8 +46,8 @@ class GatewayService implements GatewayInterface {
         const data = {
             'grant_type': 'refresh_token',
             'refresh_token': refreshToken,
-            'client_id': clientID, // obtained from above, linked to Consumer
-            'client_secret': clientSecret, // obtained from above, linked to Consumer
+            'client_id': clientID, // linked with Consumer
+            'client_secret': clientSecret, // linked with consumer
         };
 
         return httpClient

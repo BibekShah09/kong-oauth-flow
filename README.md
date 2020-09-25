@@ -37,6 +37,7 @@ For more details refer [here.](https://docs.konghq.com/hub/kong-inc/oauth2/)
   ```
  
  Make copy of .env.example to .env file and update application credentials.
+ OAUTH_PROVISION_KEY is the provision key you get during Oauth 2.0 plugin installation.
  
  Finally, start the application
  ```
@@ -50,9 +51,19 @@ curl -X POST -H "Content-Type: application/json" \
     http://localhost:8848/access-refresh-token
 ```
 
+##### Output
+```
+{"data":{"refresh_token":"Vvqd5fStgnEeQZVIuD0yFbkOVKQlOjrn","token_type":"bearer","access_token":"Cd5m9RX9QiviNx4751qORmBgXH1Q3Epx","expires_in":7200}}
+```
+
 #### Get Refresh Token From Access Token
 ```
 curl -X POST -H "Content-Type: application/json" \
-    -d '{"client_id": "fd1d813b-b355-48f2-8828-55213b2b6694", "client_secret": "fd1d813b-b355-48f2-8828-55213b2b6694", "refresh_token": "isH6SXp3DcTKvNqK6Et7aGVoppeuMdg1"}' \
+    -d '{"client_id": "SOME-CLIENT-ID", "client_secret": "SOME-CLIENT-SECRET", "refresh_token": "CYwaJl6XxezKoGKOlmTH1NAxTEwCGOwo"}' \
     http://localhost:8848/access-token
+```
+
+##### Output
+```
+{"data":{"refresh_token":"LmS5oj8MxFPDBptoK5kBAM5CngFhlopy","token_type":"bearer","access_token":"VJ2JEz8INBg6QtrISsHZJ9vb7Zqc9gqp","expires_in":7200}}
 ```
